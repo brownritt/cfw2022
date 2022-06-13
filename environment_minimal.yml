@@ -1,0 +1,15 @@
+name: cfw
+channels:
+  - defaults
+dependencies:
+  - matplotlib
+  - pandas
+  - jupyter
+  - scikit-learn
+  - statsmodels
+  - spyder
+  - pywget
+  - scipy
+  - seaborn
+  - numpy
+prefix: /Users/jritt/anaconda3/envs/cfw
