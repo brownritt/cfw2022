@@ -7,9 +7,9 @@ Rather than send someone a full copy of your operating system (which is close to
 
 If you have `conda` on your system, you can make a virtual environment with a command like
 ```
-conda env create -n fmri_analysis numpy pandas matplotlib
+conda create -n fmri_analysis numpy pandas matplotlib
 ```
-This tells the `env` ("environment") module of `conda` to create a new virtual environment named "`fmri_analysis`" (that's what the `-n` otpion does), and to include in that environment the packages `numpy`, `pandas`, and `matplotlib`, assuming it can find them at expected locations online. Note `conda` will also install *all packages that those packages depend on*, and `conda` may also need to make changes to other packages already on your system, if the versions do not match. This is a complicated process, which is why most of the time we want to let the package managers sort it out if they can.
+This tells `conda` to create a new virtual environment named `fmri_analysis` (that's what the `-n` otpion does), and to include in that environment the packages `numpy`, `pandas`, and `matplotlib`, assuming it can find them at expected locations online. Note `conda` will also install *all packages that those packages depend on*, and `conda` may also need to make changes to other packages already on your system, if the versions do not match. This is a complicated process, which is why most of the time we want to let the package managers sort it out if they can.
 
 If you are currently in a virtual environment, you can make a file that describe the environment with
 ```
@@ -19,7 +19,7 @@ This will make a new file `environment.yml` (in the current working directory) t
 ```
 conda env create -f environment.yml
 ```
-Note this create command does not include a name for the virtual environment; the name is actually listed inside the `environment.yml` file, and that is the name `conda` will use.
+Note the `env` invocation of the "envionrment" module (it is included when creating from an environment file but not when creating from a command line list of packages). This create command does not include a name for the virtual environment; the name is listed inside the `environment.yml` file, and that is the name `conda` will use.
 
 One useful pro-trick is to export a list of just the packages you actually requested, not including all the other packages `conda` installs to satisfy the dependencies:
 ```
